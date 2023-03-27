@@ -1,1 +1,1 @@
-# homeplants-app-react
+# houseplants-app-react
