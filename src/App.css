@@ -1,113 +1,416 @@
 .App {
-  background-color: #c7eb8e;
-}
-.houseplants {
   background-image: url("./img/bkg.jpg");
-  border: solid black;
-  width: 94%;
-  margin: 0 auto;
-  min-height: 100vh;
+  width: 100vw;
+  height: 100vh;
+}
+.houseplants{
   display: flex;
   flex-direction: column;
   justify-content: space-around;
 }
-@media (min-width: 768px) {
-  .houseplants {
-      width: 720px;
-  }
-}
-@media (min-width: 1024px) {
-  .houseplants {
-      width: 960px;
-  }
-}
-@media (min-width: 1440px) {
-  .houseplants {
-      width: 1100px;
-  }
+.menu{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  height: 10vh;
 }
 .logo{
-  width: 10%;
+  width: 50%;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
 }
-img{
-  width: 87%;
+.logo img{
+  width: 10%;
+  height: 100%;
+  margin: 1% 5% 0 5%;
+}
+.logo a{
+  text-decoration: none;
+  color: darkgreen;
+  margin-left: 4%;
+  margin-top: 2%;
+  font-size: 65px;
+}
+.menuIcons{
+  margin: 1% 3% 0 0;
+  width: 50%;
+  height: 20%;
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  flex-wrap: nowrap;
+}
+button{
+  width: 90px;
+  height: 10vh;
+  background-color: #97b36b;
+  font-size: x-large;
+  border-radius: 10%;
+  cursor: pointer;
+}
+button:hover {
+  background-color: mediumseagreen;
+  border-radius: 10px;
+}
+button:focus {
+  background-color: gray;
+  border-radius: 10px;
+}
+.advertisement{
+  border: solid darkgreen;
+  margin-top: 3%;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
 }
 .header{
-  border: solid black;
+  display: flex;
+  flex-direction: row;
+  height: 10vh;
+}
+ h2{
+  font-family: „Comic Sans MS”, cursive, sans-serif;
+  font-size: 55px;
+  margin-left: 40%;
+}
+.search{
+  margin-top: 3%;
+  display: flex;
+  flex-direction: row;
+}
+.search button{
+  width: 10rem;
+}
+.search input{
+  width: 63rem;
+  border-radius: 5%;
+}
+.main{
+  border: solid darkblue;
+  margin-top: 3%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.calendar{
+  width: 50%;
+  background-color: darkseagreen;
+}
+.plant_class{
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+}
+.plant_class img{
+  width: 100%;
+}
+.footer{
+  margin: 2% 1% 0 1%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-h1{
-  font-family: „Comic Sans MS”, cursive, sans-serif;
+.footer p{
+  font-size: large;
+}
+.newsletter_btn{
+  width: fit-content;
+  height: fit-content;
+  font-weight: bold;
+}
+
+.user_data{
+  margin-top: 3%;
+  display: flex;
+  flex-direction: row;
+}
+.user_data img{
+  margin: 0 8% 0 8%;
+  width: 170px;
+  height: 190px;
+  border: solid black;
+}
+.data{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 70%;
+}
+.first, .second{
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.data p{
+  margin: 10% 0 0 0;
+  border: solid black;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: x-large;
+}
+.data_change{
+  margin-top: 2%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.first_collumn, .second_collumn, .third_collumn{
+  display: flex;
+  flex-direction: column;
+}
+.data_change button{
+  width: 270px;
+}
+
+
+.my_jungle{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+.title_page{
+  margin-top: 1%;
+  text-align: center;
+  font-family:'Courier New', Courier, monospace;
+  font-size: xx-large;
+  font-weight: bold;
+  color: green;
+}
+.search_myplant{
+  margin-top: 1%;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.search_myplant input{
+  width: 90%;
+}
+.user_plants{
+  margin-top: 2%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.plants{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.plant, .next_plant{
+  width: fit-content;
+  margin-left: 2%;
+  border: solid black;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.plants img{
+  width: 205px;
+  height: 135px;
+}
+.plant_data{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+}
+.add_plant{
+  margin-left: 2%;
+  border-radius: 50%;
+  width: 5%;
+}
+.add_plant:hover {
+  background-color: mediumseagreen;
+  border-radius: 50%;
+}
+.add_plant:focus {
+  background-color: gray;
+  border-radius: 50%;
+}
+
+
+.shop{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.search_ad{
+  margin-top: 5%;
+  display: flex;
+  flex-direction: row;
+}
+.search_ad input{
+  width: 80%;
+}
+.search_ad button{
+  width: fit-content;
+  padding: 16px;
+  font-size: 16px;
 }
 .dropdown {
   position: relative;
   display: inline-block;
-  width: 10%;
 }
-
 .dropdown-content {
-  display: none;
+  display:none;
   position: absolute;
-  background: none;
+  background-color: #f9f9f9;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   padding: 12px 16px;
   z-index: 1;
 }
-
+.dropdown-content li{
+  cursor: pointer;
+}
 .dropdown:hover .dropdown-content {
   display: block;
 }
-.search{
-  border: solid black;
-  display: flex;
-  flex-direction: row;
+.shop label{
+  margin-left: 40%;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: x-large;
+  color: darkgreen;
+  font-weight: bold;
 }
-input{
-  width: 100%;
-}
-.main{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-}
-.calendar{
-  border: solid black;
-  min-width: 50%;
-  background-color: darkseagreen;
-}
-.plant_class{
-  border: solid black;
-  max-width: 50%;
-}
-.icons{
-  border: solid black;
-  background-color: darkseagreen;
+.announcements{
+  margin-top: 2%;
+  height: 40vh;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  border: solid lime;
 }
-.advertisement{
+.announcement, .second, .third, .fourth{
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+}
+.announcing{
+  width: fit-content;
+  display: flex;
+}
+.object{
+  width: fit-content;
+  display: flex;
+}
+.object img{
+  width: 30%;
+}
+.desc_announcement{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  
+}
+
+
+.plant_forum{
+  display: inline-flex;
+}
+.menu_forum{
+  margin-top: 2%;
+  width: 16vw;
+  border: solid black;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+}
+.menu_forum button{
+  width: 218px;
+  height: 88px;
+  background-color: darkolivegreen;
+}
+.search_posts{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.display_category{
+  margin-top: 2%;
+  width: 84vw;
+  border: solid black;
+  flex-direction: column;
+}
+.display_category div{
+  height: 20vh;
   border: solid black;
 }
-.menu{
-  border-radius: 5px;
-  background-color: #97b36b;
-  width: 100%;
-  margin-right: 0%;
+
+
+
+.start{
+  display: flex;
+  flex-direction: column;
 }
- li a{
-  text-decoration: none;
-  color: black;
-  font-weight: 800;
-  font-size: large;
-  font-family: „Comic Sans MS”, cursive, sans-serif;
+.menu_start{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
-button{
-  min-width: 10%;
-  background-color: #97b36b;
-  font-size: x-large;
+.contact{
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
+.contact a{
+  margin-top: 3%;
+  font-size: xx-large;
+}
+.enter_data{
+  margin-top: 3%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.panel{
+  width: 400px; 
+  background: darkolivegreen;
+  font: 16px calibri;
+  letter-spacing: -1px;
+}
+.start input, label{
+  display: block;
+  width: 360px; 
+  font-size: 22px;
+}
+#username:focus, #password:focus {
+  margin-top: 2%;
+}
+.media_registration{
+  margin: 3% 0 3% 0;
+  display: flex;
+  justify-content: space-around;
+}
+.start button{
+  width: 218px;
+  height: 88px;
+}
+
+
+.search{
+  margin: 3% 0% 3% 1%;
+  display: flex;
+}
+.catalog{
+  margin: 1% 0% 1% 1%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.plantt{
+  margin: 2% 2% 0 0;
+  width: 20%;
+  height: 100px;
+  border: solid green;
+}
+
+
