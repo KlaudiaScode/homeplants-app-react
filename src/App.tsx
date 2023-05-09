@@ -1,26 +1,68 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react';
 import './App.css';
+import Home from './components/Home';
+import PlantForum from './components/PlantForum';
+import PlantsClass from './components/PlantsClass';
+import Marketplace from './components/Marketplace';
+import UserPlants from './components/UserPlants';
+import UserProfile from './components/UserProfile';
+import Registration from './components/Registration/Registration';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+  const [menuItem, setMenuItem] = useState('homepage'); 
 
+  function updateMenuItem(menuItemName: string){
+    setMenuItem(menuItemName)
+    window.history.pushState({},'',`/${menuItemName}`)
+  }
+
+  useEffect(()=>{
+    function handlePopState(event: PopStateEvent){
+      const pathArray = window.location.pathname.split('/');
+      const newMenuItem = pathArray[1];
+      setMenuItem(newMenuItem)
+    }
+    window.addEventListener('popstate',handlePopState)
+    
+    return ()=>{
+      window.removeEventListener('popstate',handlePopState)
+    }
+  },[])
+
+  switch(menuItem){
+    case 'registration':
+      return (
+        <Registration setMenuItem={updateMenuItem} />
+      )
+    case '':
+    case 'homepage':
+      return(
+        <Home setMenuItem={updateMenuItem} />
+      )
+    case 'userprofile':
+      return(
+        <UserProfile setMenuItem={updateMenuItem} />
+      )
+    case 'userplants':
+      return(
+        <UserPlants setMenuItem={updateMenuItem} />
+    )
+    case 'marketplace':
+      return(
+        <Marketplace setMenuItem={updateMenuItem} />
+    )
+    case 'plantforum':
+      return(
+        <PlantForum setMenuItem={updateMenuItem} />
+    )
+    case 'plantsclass':
+      return(
+        <PlantsClass setMenuItem={updateMenuItem} />
+    )
+    default: 
+        return(
+          <div>Nieznany id strony {menuItem}</div>
+        )
+  }
+}
 export default App;
