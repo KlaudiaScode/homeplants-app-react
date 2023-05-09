@@ -3,7 +3,7 @@ import './App.css';
 import Home from './components/Home';
 import PlantForum from './components/PlantForum';
 import PlantsClass from './components/PlantsClass';
-import Shop from './components/Shop';
+import Marketplace from './components/Marketplace';
 import UserPlants from './components/UserPlants';
 import UserProfile from './components/UserProfile';
 import Registration from './components/Registration/Registration';
@@ -47,9 +47,9 @@ function App() {
       return(
         <UserPlants setMenuItem={updateMenuItem} />
     )
-    case 'shop':
+    case 'marketplace':
       return(
-        <Shop setMenuItem={updateMenuItem} />
+        <Marketplace setMenuItem={updateMenuItem} />
     )
     case 'plantforum':
       return(
