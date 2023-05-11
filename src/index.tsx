@@ -11,35 +11,50 @@ import PlantForum from './components/PlantForum/PlantForum';
 import Marketplace from './components/Marketplace';
 import PlantsClass from './components/PlantsClass';
 import Registration from './components/Registration/Registration';
+import Plant from './components/Plant';
+import SelectedPlantClass from './components/PlantsClass/SelectedPlantClass';
+import SelectedCategory from './components/PlantsClass/SelectedCategory';
 
 const routerConfig = createBrowserRouter([
   {
     path:"/",
-    element:<Home setMenuItem={()=>undefined}/>
+    element:<Home />
   },
   {
     path:"/userprofile",
-    element:<UserProfile setMenuItem={()=>undefined} />
+    element:<UserProfile />
   },
   {
     path:"/userplants",
-    element:<UserPlants setMenuItem={()=>undefined} />
+    element:<UserPlants />
+  },
+  {
+    path:"/userplants/:id",
+    element:<Plant />
   },
   {
     path:"/plantforum",
-    element:<PlantForum setMenuItem={()=>undefined} />
+    element:<PlantForum />
   },
   {
     path:"/marketplace",
-    element:<Marketplace setMenuItem={()=>undefined} />
+    element:<Marketplace />
   },
   {
     path:"/plantsclass",
-    element:<PlantsClass setMenuItem={()=>undefined} />
+    element:<PlantsClass />
+  },
+  {
+    path:"/plantsclass/category",
+    element:<SelectedCategory />
+  },
+  {
+    path:"/plantsclass/category/blooming-in-summer",
+    element:<SelectedPlantClass />
   },
   {
     path:"/registration",
-    element:<Registration setMenuItem={()=>undefined} />
+    element:<Registration />
   }
 ])
 

@@ -7,11 +7,11 @@ export interface HomeProps{
     setMenuItem: (arg:string)=>void
 }
 
-export default function Home({setMenuItem}: HomeProps){
+export default function Home(){
   return (
       <div className="App">
         <div className="houseplants">
-            <Nav setMenuItem={setMenuItem} />
+            <Nav />
           <div className="advertisement">
             <a href='#advertisement'><p>Miejsce na Twoją reklamę</p></a>
           </div>

@@ -1,15 +1,16 @@
 import React from 'react';
 import Nav from '../Nav';
+import { Link } from "react-router-dom";
 
 export interface UserPlantsProps{
     setMenuItem: (arg:string)=>void
 }
 
-export default function UserPlants({setMenuItem}: UserPlantsProps){
+export default function UserPlants(){
     return (
         <div className="App">
             <div className="houseplants">
-                <Nav setMenuItem={setMenuItem} />
+                <Nav/>
                     <div className="advertisement">
                         <a href='#advertisement'><p>Miejsce na Twoją reklamę</p></a>
                     </div>
@@ -17,39 +18,42 @@ export default function UserPlants({setMenuItem}: UserPlantsProps){
                         <input type='text' placeholder='Search by name......'/>
                         <button>Search</button>
                     </div>
-                    <div className='catalog'>
+                    <div className='category'>
+                    <Link to="/plantsclass/category"><button className='plantt'>
+                            <label>Kwitnące latem</label>
+                        </button></Link>
                         <button className='plantt'>
-                            <label>Nazwa rośliny na tle jej zdjęcia</label>
+                            <label>Kwitnące wiosną</label>
                         </button>
                         <button className='plantt'>
-                            <label>Nazwa rośliny na tle jej zdjęcia</label>
+                            <label>Kwitnące jesienią</label>
                         </button>
                         <button className='plantt'>
-                            <label>Nazwa rośliny na tle jej zdjęcia</label>
+                            <label>Kwitnące zimą</label>
                         </button>
                         <button className='plantt'>
-                            <label>Nazwa rośliny na tle jej zdjęcia</label>
+                            <label>Ozdobne owoce</label>
                         </button>
                         <button className='plantt'>
-                            <label>Nazwa rośliny na tle jej zdjęcia</label>
+                            <label>Ozdobne kwiaty</label>
                         </button>
                         <button className='plantt'>
-                            <label>Nazwa rośliny na tle jej zdjęcia</label>
+                            <label>Ozdobne liście</label>
                         </button>
                         <button className='plantt'>
-                            <label>Nazwa rośliny na tle jej zdjęcia</label>
+                            <label>Pachnące</label>
                         </button>
                         <button className='plantt'>
-                            <label>Nazwa rośliny na tle jej zdjęcia</label>
+                            <label>Stanowisko jasne</label>
                         </button>
                         <button className='plantt'>
-                            <label>Nazwa rośliny na tle jej zdjęcia</label>
+                            <label>Stanowisko zacienione</label>
                         </button>
                         <button className='plantt'>
-                            <label>Nazwa rośliny na tle jej zdjęcia</label>
+                            <label>Bezpieczne dla zwierząt</label>
                         </button>
                         <button className='plantt'>
-                            <label>Nazwa rośliny na tle jej zdjęcia</label>
+                            <label>Zioła</label>
                         </button>
                     </div>
             </div>

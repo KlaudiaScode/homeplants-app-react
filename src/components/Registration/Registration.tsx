@@ -1,21 +1,19 @@
 import React from 'react';
-import plant from '../../img/plant.png';
+import { Link } from 'react-router-dom';
+import Logo from '../../Logo';
 
 export interface RegistrationProps{
     setMenuItem: (arg:string)=>void
 }
 
-export default function Registration({setMenuItem}: RegistrationProps){
+export default function Registration(){
     return (
         <div className="App">
             <div className="houseplants">
                 <div className='start'>
                     <div className='menu_start'>
                         <div className="logo">
-                            <img src={plant} alt="Plant with pot" />
-                            <h1>
-                                <a href='homepage'>𝓗𝓸𝓾𝓼𝓮𝓟𝓵𝓪𝓷𝓽𝓼</a>
-                            </h1>
+                            <Logo />
                         </div>
                         <div className='contact'>
                             <a href='#regulation'>Regulamin</a>

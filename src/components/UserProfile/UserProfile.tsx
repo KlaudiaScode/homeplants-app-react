@@ -6,11 +6,11 @@ export interface ProfileProps{
     setMenuItem: (arg:string)=>void
 }
 
-export default function UserProfile({setMenuItem}: ProfileProps){
+export default function UserProfile(){
     return (
         <div className="App">
             <div className="houseplants">
-                <Nav setMenuItem={setMenuItem} />
+                <Nav/>
                 <div className='user_data'>
                 <img src={userPhoto} alt="user photo" />
                     <div className='data'>

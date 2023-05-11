@@ -1,18 +1,15 @@
 import React from "react";
-import plant from '../img/plant.png';
 import { Link } from "react-router-dom";
+import Logo from "../Logo";
 
 export interface NavProps{
     setMenuItem: (arg:string)=>void
 }
 
-export default function Nav({setMenuItem}: NavProps){
+export default function Nav(){
     return (
           <div className="menu">
-            <div className="logo">
-              <img src={plant} alt="Plant with pot" />
-                <a href='homepage'>𝓗𝓸𝓾𝓼𝓮𝓟𝓵𝓪𝓷𝓽𝓼</a>
-            </div>
+            <Logo />
             <div className='menuIcons'>
               <Link to="/"><button>🏠</button></Link>
               <Link to="/userprofile"><button>👤</button></Link>
@@ -20,7 +17,7 @@ export default function Nav({setMenuItem}: NavProps){
               <Link to="/plantforum"><button>👥</button></Link>
               <Link to="/marketplace"><button>💰</button></Link>
               <Link to="/plantsclass"><button>💡</button></Link>
-              <Link to="/plantsclass"><button>🔒</button></Link>
+              <Link to="/registration"><button>🔒</button></Link>
             </div>
           </div>
         

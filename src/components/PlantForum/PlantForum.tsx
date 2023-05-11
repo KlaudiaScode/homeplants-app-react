@@ -5,11 +5,11 @@ export interface ForumProps{
     setMenuItem: (arg:string)=>void
 }
 
-export default function PlantForum({setMenuItem}: ForumProps){
+export default function PlantForum(){
     return (
         <div className="App">
             <div className="houseplants">
-                <Nav setMenuItem={setMenuItem} />
+                <Nav/>
                 <div className='plant_forum'>
                     <div className='menu_forum'>
                         <button>Posts</button>

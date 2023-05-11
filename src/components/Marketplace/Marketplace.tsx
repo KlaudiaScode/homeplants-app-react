@@ -8,11 +8,11 @@ export interface ShopProps{
     setMenuItem: (arg:string)=>void
 }
 
-export default function Shop({setMenuItem}: ShopProps){
+export default function Shop(){
     return (
         <div className="App">
             <div className="houseplants">
-                <Nav setMenuItem={setMenuItem} />
+                <Nav/>
                 <div className='shop'>
                     <div className='search_ad'>
                         <input type='text' placeholder='Search...'></input>

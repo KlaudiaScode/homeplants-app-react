@@ -2,16 +2,17 @@ import React from 'react';
 import Nav from '../Nav';
 import plant from '../../img/plant.jpg';
 import palm from '../../img/palm.jpg';
+import {Link} from 'react-router-dom';
 
 export interface UserPlantsProps{
     setMenuItem: (arg:string)=>void
 }
 
-export default function UserPlants({setMenuItem}: UserPlantsProps){
+export default function UserPlants(){
     return (
         <div className="App">
             <div className="houseplants">
-                <Nav setMenuItem={setMenuItem} />
+                <Nav/>
                 <div className="advertisement">
                     <a href='#advertisement'><p>Miejsce na Twoją reklamę</p></a>
                 </div>
@@ -25,6 +26,7 @@ export default function UserPlants({setMenuItem}: UserPlantsProps){
                 </div>
                 <div className='user_plants'>
                     <div className='plants'>
+                        <Link to='/userplants/Chlorophytum-laxum'>
                         <div className='plant'>
                             <img src={plant} alt='my_plant'/>
                             <div className='plant_data'>
@@ -34,6 +36,8 @@ export default function UserPlants({setMenuItem}: UserPlantsProps){
                                 <span>💧every 2-3days</span>
                             </div>
                         </div>
+                        </Link>
+                        <Link to='/userplants/Chrysalidocarpus-syn.-Areca'>
                         <div className='next_plant'>
                             <img src={palm} alt='my_plant'/>
                             <div className='plant_data'>
@@ -43,6 +47,7 @@ export default function UserPlants({setMenuItem}: UserPlantsProps){
                                 <span>💧twice weekly</span>
                             </div>
                         </div>
+                        </Link>
                         <button className='add_plant'>➕</button>
                     </div>
                 </div>
