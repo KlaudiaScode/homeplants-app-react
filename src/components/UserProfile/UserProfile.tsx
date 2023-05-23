@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Nav from '../Nav';
 import userPhoto from '../../img/userPhoto.png'
+import Modal from '../Modal';
 
 export interface ProfileProps{
     setMenuItem: (arg:string)=>void
 }
 
 export default function UserProfile(){
+    const [modalAccountDeleteActive, setModalAccountDeleteActive]=useState(false)
     return (
         <div className="App">
             <div className="houseplants">
@@ -15,38 +17,32 @@ export default function UserProfile(){
                 <img src={userPhoto} alt="user photo" />
                     <div className='data'>
                         <div className='first'>
-                            <p>Angelika Nowak</p>
+                            <p>John Snow</p>
                                 <span>login</span>
-                            <p>angelNowak@onet.pl</p>
+                            <p>johnSnow@onet.pl</p>
                                 <span>e-mail</span>
                         </div>
                         <div className='second'>
-                            <p>Zdobyte rekomendacje 67%</p>
-                                <span>Poleca Cię</span>
+                            <p>Recommendations 67%</p>
+                                <span>Recommends you</span>
                             <p>12.03.2021r</p>
-                                <span>Data rejestracji</span>
+                                <span>Date of registration</span>
                         </div>
                     </div>
                 </div>
                 <div className='data_change'>
                     <div className='first_collumn'>
-                        <button className='login'>Zmień login</button>
-                        <input type='text'></input>
-                        <button className='e-mail'>Zmień e-mail</button>
-                        <input type='text'></input>
-                        <button className='password'>Zmień hasło</button>
-                        <input type='text'></input>
+                        <button className='login'>Change login</button>
+                        <button className='e-mail'>Change e-mail</button>
+                        <button className='password'>Change password</button>
                     </div>
                     <div className='second_collumn'>
-                        <button className='photo'>Zmień zdjęcie</button>
-                        <input type='text'></input>
-                        <button className='personal_data'>Zmień dane osobowe</button>
-                        <input type='text'></input>
-                        <button className='language'>Zmień język</button>
-                        <input type='text'></input>
+                        <button className='photo'>Change photo</button>
+                        <button className='personal_data'>Change personal information</button>
+                        <button className='language'>Change language</button>
                     </div>
                     <div className='third_collumn'>
-                        <button className='delete_account'>Usuń konto</button>
+                        <button onClick={()=>setModalAccountDeleteActive(true)} className='delete_account'>Delete account</button>
                     </div>
                 </div>
                 <div className="footer">
@@ -56,16 +52,17 @@ export default function UserProfile(){
                         <p>nr.tel.667456110</p>
                     </div>
                     <div className="newsletter">
-                        <p>Dołącz do pasjonatów zielonych pomieszczeń i otrzymuj benefity</p>
-                        <button className="newsletter_btn">ZAPISZ SIĘ DO NEWSLETTERA</button>
+                        <p>Join the enthusiasts of green spaces and receive benefits</p>
+                        <button className="newsletter_btn">SUBSCRIBE TO THE NEWSLETTER</button>
                     </div>
                     <div className="copyright">
-                        <a href='#regulation'>Regulamin</a>
-                        <p>© 2023 HousePlants. Wszelkie prawa zastrzeżone.<br></br>
+                        <a href='#regulation'>Regulation</a>
+                        <p>© 2023 HousePlants.All rights reserved.<br></br>
                         This site is protected by Google Privacy Policy </p>
                     </div>
                 </div>
             </div>
+            {modalAccountDeleteActive && <Modal close={()=>setModalAccountDeleteActive(false)}/>}
         </div>
     )
 }

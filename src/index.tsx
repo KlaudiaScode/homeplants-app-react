@@ -14,6 +14,17 @@ import Registration from './components/Registration/Registration';
 import Plant from './components/Plant';
 import SelectedPlantClass from './components/PlantsClass/SelectedPlantClass';
 import SelectedCategory from './components/PlantsClass/SelectedCategory';
+import Description from './components/Plant/components/Description';
+import CarePlant from './components/Plant/components/CarePlant';
+import CourseGrowth from './components/Plant/components/CourseGrowth';
+import Note from './components/Plant/components/Note';
+import PlantGallery from './components/Plant/components/PlantGallery';
+import Questions from './components/PlantForum/components/Questions';
+import Members from './components/PlantForum/components/Members';
+import Posts from './components/PlantForum/components/Posts';
+import Multimedia from './components/PlantForum/components/Multimedia';
+import Messages from './components/PlantForum/components/Messages';
+import Announcement from './components/Marketplace/components/Announcement';
 
 const routerConfig = createBrowserRouter([
   {
@@ -22,7 +33,7 @@ const routerConfig = createBrowserRouter([
   },
   {
     path:"/userprofile",
-    element:<UserProfile />
+    element:<UserProfile />,
   },
   {
     path:"/userplants",
@@ -30,15 +41,65 @@ const routerConfig = createBrowserRouter([
   },
   {
     path:"/userplants/:id",
-    element:<Plant />
+    element:<Plant />,
+    children:[
+      {
+        path:"/userplants/:id/description",
+        element:<Description />
+      },
+      {
+        path:"/userplants/:id/care-plant",
+        element:<CarePlant />
+      },
+      {
+        path:"/userplants/:id/course-growth",
+        element:<CourseGrowth />
+      },
+      {
+        path:"/userplants/:id/note",
+        element:<Note />
+      },
+      {
+        path:"/userplants/:id/plant-gallery",
+        element:<PlantGallery />
+      }
+    ]
   },
   {
     path:"/plantforum",
-    element:<PlantForum />
+    element:<PlantForum />,
+    children:[
+      {
+        path:"/plantforum/posts",
+        element:<Posts />
+      },
+      {
+        path:"/plantforum/members",
+        element:<Members />
+      },
+      {
+        path:"/plantforum/questions",
+        element:<Questions />
+      },
+      {
+        path:"/plantforum/multimedia",
+        element:<Multimedia />
+      },
+      {
+        path:"/plantforum/messages",
+        element:<Messages />
+      }
+    ]
   },
   {
     path:"/marketplace",
-    element:<Marketplace />
+    element:<Marketplace />,
+    children:[
+      {
+        path:"/marketplace/:id",
+        element:<Announcement />
+      }
+    ]
   },
   {
     path:"/plantsclass",

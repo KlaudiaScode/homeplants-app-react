@@ -11,7 +11,7 @@ export default function Nav(){
           <div className="menu">
             <Logo />
             <div className='menuIcons'>
-              <Link to="/"><button>🏠</button></Link>
+              <Link to="/"><button aria-label='home page'><span aria-hidden='true'>🏠</span></button></Link>
               <Link to="/userprofile"><button>👤</button></Link>
               <Link to="/userplants"><button>🌿</button></Link>
               <Link to="/plantforum"><button>👥</button></Link>

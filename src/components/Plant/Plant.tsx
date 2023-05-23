@@ -1,7 +1,13 @@
 import Nav from "../Nav";
 import plant from '../../img/plant.jpg';
+import { Link, Outlet, useLocation, useParams } from "react-router-dom";
+
+
 
 export default function Plant (){
+    const location= useLocation();
+    const params= useParams();
+    console.log(location, params)
     return (
         <div className="App">
             <div className="houseplants">
@@ -9,27 +15,20 @@ export default function Plant (){
                     <Nav/>
                     <div className="basic_data">
                         <img src={plant} alt="selected plant" />
-                        <label>Chlorophytum laxum 'Ocean's Zielistka czubiasta</label>
+                        <div className="names_plant">
+                            <label className="latin_name">Chlorophytum laxum 'Ocean's</label>
+                            <label><strong>Zielistka czubiasta</strong></label>
+                        </div>
                         <div className="category_bar">
-                        <button>Opis rośliny</button>
-                        <button>Plan opieki</button>
-                        <button>Notatka</button>
-                        <button>Przebieg wzrostu</button>
-                        <button>Galeria rośliny</button>
-                    </div>
+                        <Link to='description'><button>Plant description </button></Link>
+                        <Link to='care-plant'><button>Care plan</button></Link>
+                        <Link to='note'><button>Note</button></Link>
+                        <Link to='course-growth'><button>Course growth</button></Link>
+                        <Link to='plant-gallery'><button>Plant gallery</button></Link>
+                        </div>
                     </div>
                     <div className="category_window">
-                        <p>Chlorophytum comosum Ocean to zwarta roślina zwana pająkiem, przypominająca trochę Variegatum, z kremowymi brzegami i zielonym środkiem. Jest to atrakcyjna, kaskadowa roślina o małych białych kwiatkach i „maluchach” tworzących na długich, wąskich łodygach zwanych rozłogami. Idealna jako roślina wisząca. Ich różnorodne liście i wdzięczny, przypominający fontannę pokrój dodają pięknego kontrastu i tekstury w połączeniu z innymi roślinami domowymi.
-                            Roślina ma 30 cm wysokości z doniczką oraz 50 cm szerokości. Średnica doniczki: 12 cm
-                            Pochodzenie: Afryka Południowa
-                            Docelowa wysokość: do 30 cm, tempo wzrostu szybkie
-                            Temperatura: idealna temperatura w miesiącach ciepłych w granicach 20-28ºC. Zimą zniesie temperatury do 8ºC.
-                            Stanowisko: jasne, pośrednie światło. Będzie tolerować trochę cienia; jednakże spowolni to jej tempo wzrostu i może stracić swoje ciekawie ozdobne pręgi. Unikaj bezpośredniego światła słonecznego
-                            Pielęgnacja: podlewać dokładnie starając się, uzyskać lekko wilgotną glebę przez cały sezon wegetacyjny. Zimą potrzebuje mniej wody. Nawozić co dwa tygodnie w okresie wegetacyjnym
-                            Wilgotność: umiarkowana wilgotność. Roślina ta będzie się dobrze zachowywała przy normalnej wilgotności w domu (50 – 60%)
-                            Gleba: dobrze przepuszczalna, lekka, piaszczysta, z dodatkiem żwirku gruboziarnistego
-                            Przyjazność dla zwierząt: TAK
-                        </p>
+                        <Outlet />
                     </div>
                 </div>
             </div>

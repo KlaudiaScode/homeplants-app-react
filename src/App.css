@@ -1,18 +1,15 @@
 .App {
   background-image: url("./img/bkg.jpg");
-  width: 100vw;
-  height: 100vh;
+  background-size: cover;
+  min-height:100vh;
 }
-.houseplants{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
+
+/*nav*/
 .menu{
+  height: fit-content;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  height: 10vh;
 }
 .logo{
   width: 50%;
@@ -22,40 +19,24 @@
 }
 #Layer_1{
   width: 150px;
-  height: 140px;
+  height: 120px;
 }
 .logo a{
   text-decoration: none;
   color: darkgreen;
   margin-left: 4%;
-  margin-top: 2%;
-  font-size: 65px;
+  font-size: 93px;
 }
 .menuIcons{
   margin: 1% 3% 0 0;
   width: 50%;
-  height: 20%;
+  height: 28%;
   display: flex;
   flex-direction: row;
   gap: 40px;
   flex-wrap: nowrap;
 }
-button{
-  width: 90px;
-  height: 10vh;
-  background-color: #97b36b;
-  font-size: x-large;
-  border-radius: 10%;
-  cursor: pointer;
-}
-button:hover {
-  background-color: mediumseagreen;
-  border-radius: 10px;
-}
-button:focus {
-  background-color: gray;
-  border-radius: 10px;
-}
+/*advirement*/
 .advertisement{
   border: solid darkgreen;
   margin-top: 3%;
@@ -63,52 +44,35 @@ button:focus {
   display: flex;
   justify-content: center;
 }
-.header{
-  display: flex;
-  flex-direction: row;
-  height: 10vh;
-}
- h2{
-  font-family: „Comic Sans MS”, cursive, sans-serif;
-  font-size: 45px;
-  margin-left: 40%;
-}
-.search{
-  margin-top: 3%;
-  display: flex;
-  flex-direction: row;
-}
-.search button{
-  width: 10rem;
-}
-.search input{
-  width: 63rem;
-  border-radius: 5%;
-}
-.main{
-  border: solid darkblue;
+/*SearchBar*/
+.search_bar{
   margin-top: 1%;
+  width: 100%;
+  height: 10%;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
+  justify-content: center;
 }
-.calendar{
-  width: 50%;
-  background-color: darkseagreen;
+.search_bar input{
+  width: 68rem;
+  height: 5vh;
+  border-radius: 5%;
+  font-size: x-large;
 }
-.plant_class{
-  width: 50%;
-  display: flex;
-  flex-direction: row;
+.search_bar button{
+  height: 6vh;
 }
-.plant_class img{
-  width: 100%;
-}
+
+/*footer*/
 .footer{
-  margin: 2% 1% 0 1%;
+  width: 100%;
+  clear:both;
+  position: fixed;
+  bottom: 0;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 .footer p{
   font-size: large;
@@ -118,7 +82,43 @@ button:focus {
   height: fit-content;
   font-weight: bold;
 }
+/*button*/
+button{
+  width: 90px;
+  height: 10vh;
+  background-color: #97b36b;
+  font-size: x-large;
+  border-radius: 10%;
+  transition-duration: 0.4s;
+}
+button:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+button:focus {
+  background-color: darkgreen;
+  border-radius: 10px;
+}
+/*home*/
+.welcome{
+  display: flex;
+  flex-direction: row;
+  height: auto;
+}
+ h2{
+  font-family: „Comic Sans MS”, cursive, sans-serif;
+  font-size: 35px;
+  margin-left: 40%;
+}
+.uniwersal_window{
+  border: solid darkblue;
+  margin-top: 1%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
 
+/*userprofile*/
 .user_data{
   margin-top: 3%;
   display: flex;
@@ -163,7 +163,7 @@ button:focus {
   width: 270px;
 }
 
-
+/*user plants*/
 .my_jungle{
   display: flex;
   flex-direction: column;
@@ -232,13 +232,53 @@ button:focus {
 }
 
 
+.plant_Id{
+display: flex;
+flex-direction: column;
+}
+.basic_data{
+  margin-top: 4%;
+  padding: 1% 1% 1% 1%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.basic_data img{
+  width: 20vw;
+  height: 30vh;
+}
+.category_bar{
+  width: 40%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+}
+.category_bar button{
+  margin-left: 1%;
+  width: fit-content;
+}
+.names_plant label{
+  display: flex;
+  flex-direction: column;
+  font-size: xx-large;
+}
+.latin_name{
+  font-style: italic;
+}
+.category_window{
+  padding: 2% 2% 2% 2%;
+  font-size: x-large;
+}
+
+/*marketplace*/
 .shop{
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
 }
 .search_ad{
-  margin-top: 5%;
+  margin-top: 2%;
   display: flex;
   flex-direction: row;
 }
@@ -277,7 +317,7 @@ button:focus {
   font-weight: bold;
 }
 .announcements{
-  margin-top: 2%;
+  margin-top: 1%;
   height: 40vh;
   display: flex;
   flex-direction: row;
@@ -285,40 +325,37 @@ button:focus {
   justify-content: space-between;
   border: solid lime;
 }
-.announcement, .second, .third, .fourth{
+.announcement{
   width: 20%;
   display: flex;
   flex-direction: column;
+  background-color: gray;
 }
-.announcing{
-  width: fit-content;
-  display: flex;
-}
-.object{
-  width: fit-content;
-  display: flex;
-}
-.object img{
+.announcement img{
   width: 30%;
 }
 .desc_announcement{
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  
 }
 
-
+/*plantforum*/
 .plant_forum{
-  display: inline-flex;
+  margin-top: 2%;
+  display: flex;
+}
+.plant_forum img{
+  width: 90px;
+  height: 100px;
 }
 .menu_forum{
-  margin-top: 3%;
+  margin: 3% 0% 0% 1%;
   width: 16vw;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 .menu_forum button{
   width: 218px;
@@ -332,19 +369,25 @@ button:focus {
 }
 .display_category{
   margin-top: 2%;
-  width: 84vw;
+  width: 83vw;
+  height: 60vh;
   border: solid black;
   flex-direction: column;
 }
-.display_category div{
-  height: 20vh;
-  border: solid black;
+.post{
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(199, 195, 195);
+}
+.post_content{
+  text-align: center;
+  font-size: x-large;
 }
 
 
-
+/*plantclass*/
 .search{
-  margin: 3% 0% 3% 1%;
+  margin: 1% 0% 3% 1%;
   display: flex;
 }
 .catalog{
@@ -354,7 +397,7 @@ button:focus {
   flex-wrap: wrap;
 }
 .plantt{
-  margin: 2% 2% 0 0;
+  margin: 1% 2% 0 0;
   width: 20%;
   height: 100px;
   border: solid green;
@@ -363,7 +406,7 @@ button:focus {
   height: 400px;
 }
 .category_plant{
-  margin-top: 2%;
+  margin-top: 1%;
   display: flex;
   flex-direction: row;
 }
@@ -375,7 +418,7 @@ height: 500px;
   font-size: larger;
 }
 
-
+/*registration*/
 .start{
   display: flex;
   flex-direction: column;

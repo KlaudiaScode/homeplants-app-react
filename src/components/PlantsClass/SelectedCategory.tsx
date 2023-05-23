@@ -2,17 +2,15 @@ import React from 'react';
 import Nav from '../Nav';
 import { Link } from "react-router-dom";
 import firstplant from '../../img/skrzydlokwiat.jpg';
+import Advertisement from '../Advertisement';
 
 
 
 export default function SelectedCategory(){
     return (
         <div className="App">
-            <div className="houseplants">
                 <Nav/>
-                    <div className="advertisement">
-                        <a href='#advertisement'><p>Miejsce na Twoją reklamę</p></a>
-                    </div>
+                <Advertisement />
                     <div className='search'>
                         <input type='text' placeholder='Search by name......'/>
                         <button>Search</button>
@@ -27,9 +25,7 @@ export default function SelectedCategory(){
                                 </div>
                             </div>
                         </Link>
-                         
                     </div>
-            </div>
         </div>
     )
 }

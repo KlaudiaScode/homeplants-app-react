@@ -1,5 +1,7 @@
 import React from 'react';
 import Nav from '../Nav';
+import { Link, Outlet } from 'react-router-dom';
+import Footer from '../Footer';
 
 export interface ForumProps{
     setMenuItem: (arg:string)=>void
@@ -12,37 +14,18 @@ export default function PlantForum(){
                 <Nav/>
                 <div className='plant_forum'>
                     <div className='menu_forum'>
-                        <button>Posts</button>
-                        <button>Members</button>
-                        <button>Questions</button>
-                        <button>Multimedia</button>
-                        <button>Messages</button>
-                        <div className='search_posts'>
-                            <input type='text' placeholder='search in posts'></input>
-                            <button>🔎</button>
-                        </div>
-                        
+                        <Link to='posts'><button>Posts</button></Link>
+                        <Link to='members'><button>Members</button></Link>
+                        <Link to='questions'><button>Questions</button></Link>
+                        <Link to='multimedia'><button>Multimedia</button></Link>
+                        <Link to='messages'><button>Messages</button></Link>
                     </div>
                     <div className='display_category'>
-                        <div>
-                            <img/>
-                            <p>describe</p>
-                        </div>
-                        <div>
-                            <img/>
-                            <p>describe</p>
-                        </div>
-                        <div>
-                            <img/>
-                            <p>describe</p>
-                        </div>
-                        <div>
-                            <img/>
-                            <p>describe</p>
-                        </div>
+                        <Outlet />
                     </div>
                 </div>
             </div>
+            <Footer />
         </div>
     )
 }
