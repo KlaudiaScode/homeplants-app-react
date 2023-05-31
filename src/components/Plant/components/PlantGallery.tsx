@@ -8,6 +8,8 @@ export default function PlantGallery(){
                 <img></img>
                 <img></img>
             </div>
+            <label>Dodaj zdjęcie</label>
+            <input type="file"></input>
         </div>
     )
 }

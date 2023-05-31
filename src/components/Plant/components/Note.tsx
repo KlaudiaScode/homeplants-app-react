@@ -1,3 +1,4 @@
+import { Button } from "@mui/material";
 import React from "react";
 
 export default function Note(){
@@ -7,7 +8,7 @@ export default function Note(){
                 <input type="datetime-local"></input>
                 <textarea> Pojawiła się obszerna, brązowa plamka na jednym liściu</textarea>
                 <input type="file"></input>
-                <button>Save</button>
+                <Button>Save</Button>
             </div>
         </div>   
     )

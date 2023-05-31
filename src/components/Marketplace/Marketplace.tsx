@@ -1,15 +1,26 @@
 import React from 'react';
 import Nav from '../Nav';
-import plant_ad from '../../img/plant_ad.jpg';
 import Footer from '../Footer';
-import { Link } from 'react-router-dom';
 import Advertisement from '../Advertisement';
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
+import TabPanel from './components/TabPanel';
+import { Box, Button, TextField, Typography } from '@mui/material';
+import Categories from './components/Categories';
+import Price from './components/Price';
 
-export interface ShopProps{
-    setMenuItem: (arg:string)=>void
+interface MarketplaceProps{
+    open: ()=>void
 }
 
-export default function Shop(){
+export default function Marketplace(){
+const [value, setValue] = React.useState(0);
+const [categoryButtonLabel, setCategoryButtonLabel] = React.useState('Category');
+
+const handleChange = (event: React.SyntheticEvent, newValue: number) => {
+    setValue(newValue);}
+
+
     return (
         <div className="App">
             <Nav/>
@@ -17,30 +28,57 @@ export default function Shop(){
             <div className='shop'>
                 <div className='search_ad'>
                     <input type='text' placeholder='Search...'></input>
-                    <div className='dropdown'>
-                            <button>Category 🡫</button>
-                            <div className="dropdown-content">
-                                <li>Potted plants</li>
-                                <li>Fertilizers</li>
-                                <li>Pots and covers</li>
-                                <li>Plant accessories</li>
-                                <li>Substrates and additives</li>
-                            </div>
-                        </div>
-                    <button>Search</button>
+                <div className='dropdown'>
+                    <Button>{categoryButtonLabel} 🡫</Button>
+                    <ul className="dropdown-content">
+                        <li onClick={()=>setCategoryButtonLabel('Potted plants')}>Potted plants</li>
+                        <li onClick={()=>setCategoryButtonLabel('Fertilizers')}>Fertilizers</li>
+                        <li onClick={()=>setCategoryButtonLabel('Pots and covers')}>Pots and covers</li>
+                        <li onClick={()=>setCategoryButtonLabel('Plant accessories')}>Plant accessories</li>
+                        <li onClick={()=>setCategoryButtonLabel('Substrates and additives')}>Substrates and additives</li>
+                    </ul>
                 </div>
-                <label>New announcement plants:</label>
+                <Button>Search</Button>
+                </div>
                 <div className='announcements'>
-                    <Link to='/marketplace/announcement'>
-                        <div className='announcement'>
-                            <img src={plant_ad} alt='ad_plant'/>
-                            <div className='desc_announcement'>
-                                <span>Data ogłoszenia: 02.04.2023r</span>
-                                <span>Sprzedam: Juka XXL juka gwatemalska, dracena</span>
-                                <span>Cena: 25zł</span>
+                    <Box className="tab" style={{width:'100%'}}>
+                        <Tabs value={value} onChange={handleChange} aria-label="bookmarks option">
+                        <Tab label="New announcements" sx={{width:'300px'}} />
+                        <Tab label="Add announcement" sx={{width:'300px'}} />
+                        </Tabs>
+                        <TabPanel value={value} index={0}>
+                            <div >
+                                <Typography component="h3">Juka XXL Juka Gwatemalska</Typography>
+                                <Typography>Cena: 25zł</Typography>
+                                <Typography>Wiek rośliny: 1rok</Typography>
+                                <Typography>
+                                    Opis: Piękna, okazała juka: posiadająca trzy rozgałęzienia,
+                                    niezwykle gęsta i rozłożysta. Wysokość ok 230 cm. 
+                                    Doniczka wchodzi w skład oferty.
+                                </Typography>
                             </div>
-                        </div>
-                    </Link>
+                        </TabPanel>
+                        <TabPanel value={value} index={1}>
+                            <Box sx={{ m: 1, display: 'flex', flexWrap: 'wrap' }}>
+                                <TextField
+                                required
+                                id="outlined-title"
+                                label="Ad Title:"
+                                defaultValue="Sell"
+                                />
+                                <Categories />
+                                <Price />
+                                <TextField sx={{width: 500}}
+                                required
+                                id="outlined-description"
+                                label="Description:"
+                                defaultValue=""
+                                />
+                                <Typography>Dodaj zdjęcie:</Typography>
+                                    <input type='file' title='add file'></input>
+                            </Box>
+                        </TabPanel>
+                    </Box>
                 </div>
             </div>
             <Footer />

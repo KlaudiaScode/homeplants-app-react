@@ -1,7 +1,7 @@
 import Nav from "../Nav";
 import plant from '../../img/plant.jpg';
 import { Link, Outlet, useLocation, useParams } from "react-router-dom";
-
+import { Button } from "@mui/material";
 
 
 export default function Plant (){
@@ -20,11 +20,11 @@ export default function Plant (){
                             <label><strong>Zielistka czubiasta</strong></label>
                         </div>
                         <div className="category_bar">
-                        <Link to='description'><button>Plant description </button></Link>
-                        <Link to='care-plant'><button>Care plan</button></Link>
-                        <Link to='note'><button>Note</button></Link>
-                        <Link to='course-growth'><button>Course growth</button></Link>
-                        <Link to='plant-gallery'><button>Plant gallery</button></Link>
+                        <Link to='description'><Button>Plant description </Button></Link>
+                        <Link to='care-plant'><Button>Care plan</Button></Link>
+                        <Link to='note'><Button>Note</Button></Link>
+                        <Link to='course-growth'><Button>Course growth</Button></Link>
+                        <Link to='plant-gallery'><Button>Plant gallery</Button></Link>
                         </div>
                     </div>
                     <div className="category_window">

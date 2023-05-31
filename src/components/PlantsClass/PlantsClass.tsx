@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Advertisement from '../Advertisement';
 import Footer from '../Footer';
 import SearchBar from '../SearchBar';
+import { Box, Button } from '@mui/material';
 
 export interface UserPlantsProps{
     setMenuItem: (arg:string)=>void
@@ -15,67 +16,67 @@ export default function UserPlants(){
             <Nav/>
             <Advertisement />
             <SearchBar />
-            <div className='categories'>
+            <Box className='categories' sx={{m:1}}>
                 <Link to="/plantsclass/category">
-                    <button className='plantt'>
-                    <label>Kwitnące latem</label></button>
+                    <Button variant='contained' className='plantt'>
+                    <label>Kwitnące latem</label></Button>
                 </Link>
                 <Link to="/plantsclass/category">
-                <button className='plantt'>
+                <Button variant='contained' className='plantt'>
                     <label>Kwitnące wiosną</label>
-                </button>
+                </Button>
                 </Link>
                 <Link to="/plantsclass/category">
-                <button className='plantt'>
+                <Button variant='contained' className='plantt'>
                     <label>Kwitnące jesienią</label>
-                </button>
+                </Button>
                 </Link>
                 <Link to="/plantsclass/category">
-                <button className='plantt'>
+                <Button variant='contained' className='plantt'>
                     <label>Kwitnące zimą</label>
-                </button>
+                </Button>
                 </Link>
                 <Link to="/plantsclass/category">
-                <button className='plantt'>
+                <Button variant='contained' className='plantt'>
                     <label>Ozdobne owoce</label>
-                </button>
+                </Button>
                 </Link>
                 <Link to="/plantsclass/category">
-                <button className='plantt'>
+                <Button variant='contained' className='plantt'>
                     <label>Ozdobne kwiaty</label>
-                </button>
+                </Button>
                 </Link>
                 <Link to="/plantsclass/category">
-                <button className='plantt'>
+                <Button variant='contained' className='plantt'>
                     <label>Ozdobne liście</label>
-                </button>
+                </Button>
                 </Link>
                 <Link to="/plantsclass/category">
-                <button className='plantt'>
+                <Button variant='contained' className='plantt'>
                     <label>Pachnące</label>
-                </button>
+                </Button>
                 </Link>
                 <Link to="/plantsclass/category">
-                <button className='plantt'>
+                <Button variant='contained' className='plantt'>
                     <label>Stanowisko jasne</label>
-                </button>
+                </Button>
                 </Link>
                 <Link to="/plantsclass/category">
-                <button className='plantt'>
+                <Button variant='contained' className='plantt'>
                     <label>Stanowisko zacienione</label>
-                </button>
+                </Button>
                 </Link>
                 <Link to="/plantsclass/category">
-                <button className='plantt'>
+                <Button variant='contained' className='plantt'>
                     <label>Bezpieczne dla zwierząt</label>
-                </button>
+                </Button>
                 </Link>
                 <Link to="/plantsclass/category">
-                <button className='plantt'>
+                <Button variant='contained' className='plantt'>
                     <label>Zioła</label>
-                </button>
+                </Button>
                 </Link>
-            </div>
+            </Box>
             <Footer />
         </div>
     )

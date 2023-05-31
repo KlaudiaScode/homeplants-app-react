@@ -2,6 +2,8 @@ import React from 'react';
 import Nav from '../Nav';
 import { Link, Outlet } from 'react-router-dom';
 import Footer from '../Footer';
+import { Button } from '@mui/material';
+import Advertisement from '../Advertisement';
 
 export interface ForumProps{
     setMenuItem: (arg:string)=>void
@@ -10,19 +12,18 @@ export interface ForumProps{
 export default function PlantForum(){
     return (
         <div className="App">
-            <div className="houseplants">
-                <Nav/>
-                <div className='plant_forum'>
-                    <div className='menu_forum'>
-                        <Link to='posts'><button>Posts</button></Link>
-                        <Link to='members'><button>Members</button></Link>
-                        <Link to='questions'><button>Questions</button></Link>
-                        <Link to='multimedia'><button>Multimedia</button></Link>
-                        <Link to='messages'><button>Messages</button></Link>
-                    </div>
-                    <div className='display_category'>
-                        <Outlet />
-                    </div>
+            <Nav/>
+            <Advertisement />
+            <div className='plant_forum'>
+                <div className='nav_forum'>
+                    <Link to='posts'><Button variant='contained'>Posts</Button></Link>
+                    <Link to='members'><Button variant='contained'>Members</Button></Link>
+                    <Link to='questions'><Button variant='contained'>Questions</Button></Link>
+                    <Link to='multimedia'><Button variant='contained'>Multimedia</Button></Link>
+                    <Link to='messages'><Button variant='contained'>Messages</Button></Link>
+                </div>
+                <div className='display_category'>
+                    <Outlet />
                 </div>
             </div>
             <Footer />

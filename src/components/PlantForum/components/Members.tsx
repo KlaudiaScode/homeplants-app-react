@@ -1,5 +1,6 @@
 import React from "react";
 import member from "../../../img/member.jpg"
+import { Button } from "@mui/material";
 
 export default function Members(){
     return (
@@ -8,7 +9,7 @@ export default function Members(){
                 <div className="member">
                     <img src={member}></img>
                     <label className="name">Bożena Łęcka</label>
-                    <button>Sent message</button>
+                    <Button>Sent message</Button>
                 </div>
             </div>
         </div>

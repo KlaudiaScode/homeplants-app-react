@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import Nav from '../Nav';
-import userPhoto from '../../img/userPhoto.png'
 import Modal from '../Modal';
+import { Box, Button, Tab, Tabs } from '@mui/material';
+import Footer from '../Footer';
+import { Link, Outlet } from 'react-router-dom';
+import Advertisement from '../Advertisement';
 
 export interface ProfileProps{
     setMenuItem: (arg:string)=>void
@@ -9,58 +12,32 @@ export interface ProfileProps{
 
 export default function UserProfile(){
     const [modalAccountDeleteActive, setModalAccountDeleteActive]=useState(false)
+    const [value, setValue] = React.useState(0);
+    const handleChange = (event: React.SyntheticEvent, newValue: number) => {
+        setValue(newValue);}
     return (
         <div className="App">
             <div className="houseplants">
                 <Nav/>
-                <div className='user_data'>
-                <img src={userPhoto} alt="user photo" />
-                    <div className='data'>
-                        <div className='first'>
-                            <p>John Snow</p>
-                                <span>login</span>
-                            <p>johnSnow@onet.pl</p>
-                                <span>e-mail</span>
-                        </div>
-                        <div className='second'>
-                            <p>Recommendations 67%</p>
-                                <span>Recommends you</span>
-                            <p>12.03.2021r</p>
-                                <span>Date of registration</span>
-                        </div>
+                <Advertisement />
+                <Box className='data_change_container'>
+                    <div className='nav_data_change'>
+                        <Tabs value={value} onChange={handleChange} aria-label="data change options" textColor='primary'indicatorColor='secondary' >
+                            <Link to='data-profile'><Tab label="User profile" sx={{width:'250px'}} /></Link>
+                            <Link to='settings'><Tab label="Change login" sx={{width:'250px'}} /></Link>
+                            <Link to='settings'><Tab label="Change e-mail" sx={{width:'250px'}} /></Link>
+                            <Link to='settings'><Tab label="Change password" sx={{width:'250px'}} /></Link>
+                            <Link to='settings'><Tab label="Change photo" sx={{width:'250px'}} /></Link>
+                            <Link to='settings'><Tab label="Change personal data" sx={{width:'250px'}} /></Link>
+                            <Link to='settings'><Tab label="Change language" sx={{width:'250px'}} /></Link>
+                            <Tab label="Delete account" onClick={()=>setModalAccountDeleteActive(true)} sx={{width:'200px'}} />
+                        </Tabs>
                     </div>
-                </div>
-                <div className='data_change'>
-                    <div className='first_collumn'>
-                        <button className='login'>Change login</button>
-                        <button className='e-mail'>Change e-mail</button>
-                        <button className='password'>Change password</button>
+                    <div className='uniwersal_window'>
+                        <Outlet />
                     </div>
-                    <div className='second_collumn'>
-                        <button className='photo'>Change photo</button>
-                        <button className='personal_data'>Change personal information</button>
-                        <button className='language'>Change language</button>
-                    </div>
-                    <div className='third_collumn'>
-                        <button onClick={()=>setModalAccountDeleteActive(true)} className='delete_account'>Delete account</button>
-                    </div>
-                </div>
-                <div className="footer">
-                    <div className="contact_details">
-                        <a href="homepage">https://www.houseplants.com</a>
-                        <p>house_plants-info@gmail.com</p>
-                        <p>nr.tel.667456110</p>
-                    </div>
-                    <div className="newsletter">
-                        <p>Join the enthusiasts of green spaces and receive benefits</p>
-                        <button className="newsletter_btn">SUBSCRIBE TO THE NEWSLETTER</button>
-                    </div>
-                    <div className="copyright">
-                        <a href='#regulation'>Regulation</a>
-                        <p>© 2023 HousePlants.All rights reserved.<br></br>
-                        This site is protected by Google Privacy Policy </p>
-                    </div>
-                </div>
+                </Box>
+                <Footer />
             </div>
             {modalAccountDeleteActive && <Modal close={()=>setModalAccountDeleteActive(false)}/>}
         </div>

@@ -24,7 +24,11 @@ import Members from './components/PlantForum/components/Members';
 import Posts from './components/PlantForum/components/Posts';
 import Multimedia from './components/PlantForum/components/Multimedia';
 import Messages from './components/PlantForum/components/Messages';
-import Announcement from './components/Marketplace/components/Announcement';
+import {ThemeProvider} from '@mui/material/styles';
+import theme from './theme';
+import LogForm from './components/UserProfile/components/LoginForm';
+import UserData from './components/UserProfile/components/UserData';
+
 
 const routerConfig = createBrowserRouter([
   {
@@ -34,6 +38,16 @@ const routerConfig = createBrowserRouter([
   {
     path:"/userprofile",
     element:<UserProfile />,
+    children:[
+      {
+        path:"/userprofile/data-profile",
+        element:<UserData />
+      },
+      {
+        path:"/userprofile/settings",
+        element:<LogForm />
+      },
+    ]
   },
   {
     path:"/userplants",
@@ -93,13 +107,7 @@ const routerConfig = createBrowserRouter([
   },
   {
     path:"/marketplace",
-    element:<Marketplace />,
-    children:[
-      {
-        path:"/marketplace/:id",
-        element:<Announcement />
-      }
-    ]
+    element:<Marketplace />
   },
   {
     path:"/plantsclass",
@@ -124,7 +132,9 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <RouterProvider router={routerConfig} />
+    <ThemeProvider theme={theme} >
+      <RouterProvider router={routerConfig} />
+    </ThemeProvider>
   </React.StrictMode>
 );
 reportWebVitals();

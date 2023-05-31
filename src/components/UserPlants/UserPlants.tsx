@@ -6,6 +6,7 @@ import {Link} from 'react-router-dom';
 import Advertisement from '../Advertisement';
 import Footer from '../Footer';
 import SearchBar from '../SearchBar';
+import { Button } from '@mui/material';
 
 export interface UserPlantsProps{
     setMenuItem: (arg:string)=>void
@@ -67,7 +68,7 @@ export default function UserPlants(){
                             </div>
                         </div>
                         </Link>
-                        <button className='add_plant'>Add new</button>
+                        <Button className='add_plant'>Add new</Button>
                     </div>
                 </div>
             </div>

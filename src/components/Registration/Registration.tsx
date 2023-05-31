@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Logo from '../../Logo';
 import Footer from '../Footer';
+import { Button } from '@mui/material';
 
 export interface RegistrationProps{
     setMenuItem: (arg:string)=>void
@@ -17,11 +18,11 @@ export default function Registration(){
                     </div>
                     <div className='contact'>
                         <a href='#regulation'>Statute</a>
-                        <button className='contact_info'>Contact</button>
+                        <Button className='contact_info'>Contact</Button>
                     </div>
                 </div>
                 <div className='enter_data'>
-                    <button className='registration'>Create an Account</button>
+                    <Button className='registration'>Create an Account</Button>
                     <div className="panel_registration">
                         <form>
                             <label className="userlogin">Login:</label>
@@ -46,7 +47,7 @@ export default function Registration(){
                         </form>
                     </div>
 
-                    <button className='login'>Login</button>
+                    <Button className='login'>Login</Button>
                     <div className="panel_log">
                         <form>
                             <label className="username">Login:</label>
@@ -64,8 +65,8 @@ export default function Registration(){
                 </div>
                 <div className='media_registration'>
                     <p>Log in or register via:</p>
-                    <button className='facebook'>Facebook</button>
-                    <button className='google'>Google</button>
+                    <Button className='facebook'>Facebook</Button>
+                    <Button className='google'>Google</Button>
                 </div>
                 <Footer />
             </div>
