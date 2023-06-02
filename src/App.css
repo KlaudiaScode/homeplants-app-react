@@ -122,7 +122,6 @@
   justify-content: space-between;
   width: 70%;
 }
-
 .data p{
   margin: 10% 0 0 0;
   border: solid black;
@@ -134,9 +133,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-}
-.nav_data_change button{
-  background-color: lightgreen;
+  background-color: #81fd81a2;
 }
 /*user plants*/
 .my_jungle{
@@ -336,11 +333,11 @@ flex-direction: column;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  justify-content: space-around;
 }
 .nav_forum Button{
+  margin-bottom: 5%;
   width: 180px;
-  height: 88px;
+  height: 70px;
 }
 .search_posts{
   display: flex;
@@ -349,7 +346,7 @@ flex-direction: column;
 }
 .display_category{
   width: 83vw;
-  height: 60vh;
+  height: 55vh;
   border: solid black;
   flex-direction: column;
 }
@@ -406,6 +403,7 @@ height: 500px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  border: solid darkgreen;
 }
 .contact{
   width: 50%;
@@ -418,33 +416,21 @@ height: 500px;
   font-size: xx-large;
 }
 .enter_data{
-  margin-top: 3%;
+  margin-top: 2%;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
 }
-.panel{
-  width: 400px; 
-  background: darkolivegreen;
-  font: 16px calibri;
-  letter-spacing: -1px;
-}
-.start input, label{
-  display: block;
-  width: 360px; 
-  font-size: 22px;
-}
-#username:focus, #password:focus {
-  margin-top: 2%;
-}
 .media_registration{
-  margin: 3% 0 3% 0;
+  margin: 2% 0 2% 0;
   display: flex;
+  border: solid darkgreen;
   justify-content: space-around;
 }
-.start Button{
+Button{
   width: 218px;
   height: 88px;
+  background-color: darkgreen;
 }
 
 

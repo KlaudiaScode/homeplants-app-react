@@ -6,7 +6,7 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import TabPanel from './components/TabPanel';
 import { Box, Button, TextField, Typography } from '@mui/material';
-import Categories from './components/Categories';
+import CategoriesBtn from './components/CategoriesBtn';
 import Price from './components/Price';
 
 interface MarketplaceProps{
@@ -66,14 +66,14 @@ const handleChange = (event: React.SyntheticEvent, newValue: number) => {
                                 label="Ad Title:"
                                 defaultValue="Sell"
                                 />
-                                <Categories />
+                                <CategoriesBtn />
                                 <Price />
-                                <TextField sx={{width: 500}}
-                                required
-                                id="outlined-description"
-                                label="Description:"
-                                defaultValue=""
-                                />
+                               <TextField sx={{width: 500}}
+                               id="outlined-multiline-static"
+                               label="Description"
+                               multiline
+                               rows={4}
+                             />
                                 <Typography>Dodaj zdjęcie:</Typography>
                                     <input type='file' title='add file'></input>
                             </Box>

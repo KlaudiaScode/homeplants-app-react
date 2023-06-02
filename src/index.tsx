@@ -26,8 +26,8 @@ import Multimedia from './components/PlantForum/components/Multimedia';
 import Messages from './components/PlantForum/components/Messages';
 import {ThemeProvider} from '@mui/material/styles';
 import theme from './theme';
-import LogForm from './components/UserProfile/components/LoginForm';
 import UserData from './components/UserProfile/components/UserData';
+import Login from './components/UserProfile/components/Login';
 
 
 const routerConfig = createBrowserRouter([
@@ -40,12 +40,12 @@ const routerConfig = createBrowserRouter([
     element:<UserProfile />,
     children:[
       {
-        path:"/userprofile/data-profile",
+        path:"/userprofile/profile",
         element:<UserData />
       },
       {
         path:"/userprofile/settings",
-        element:<LogForm />
+        element:<Login />
       },
     ]
   },

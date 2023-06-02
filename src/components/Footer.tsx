@@ -12,7 +12,7 @@ export default function Footer(){
             </div>
             <div className="newsletter">
                 <p>Join the enthusiasts of green spaces and receive benefits</p>
-                <Button variant='contained'>SUBSCRIBE TO THE NEWSLETTER</Button>
+                <Button variant="outlined">SUBSCRIBE TO THE NEWSLETTER</Button>
             </div>
             <div className="copyright">
                 <a href='#regulation'>Regulation</a>
