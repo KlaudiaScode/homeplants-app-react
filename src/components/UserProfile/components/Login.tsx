@@ -1,11 +1,11 @@
 import React from "react";
-import { Box, Button, TextField, FormControlLabel, Checkbox } from "@mui/material";
+import { Box, Button, TextField, } from "@mui/material";
 
 
 
 export default function Login(){
     return(
-        <Box
+        <Box display={'flex'} justifyContent={'center'}
         component="form"
         sx={{
             display: 'flex',
@@ -19,12 +19,14 @@ export default function Login(){
                 <TextField
                     id="outlined"
                     label="Login"
+                    variant="filled"
                 />
                 <TextField
                     id="outlined"
                     label="NewLogin"
+                    variant="filled"
                 />
-                <Button variant="contained" sx={{m:4}}>Save Changes</Button>
+                <Button variant="contained" sx={{m:4, height:50}}>Save Changes</Button>
             </div>
         </Box>
     )

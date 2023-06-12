@@ -1,4 +1,4 @@
-import Nav from "../../Nav";
+import Nav from "../../Nav/Nav";
 import plant from '../../img/plant.jpg';
 
 import React from "react";

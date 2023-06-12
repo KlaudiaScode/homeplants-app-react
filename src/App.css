@@ -1,37 +1,43 @@
 .App {
   background-image: url("./img/bkg.jpg");
   background-size: cover;
-  min-height:100vh;
+  min-height: 100vh;
 }
+
 /*nav*/
-.menu{
+.menu {
   height: fit-content;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
 }
-.logo{
+
+.logo {
   width: 50%;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
 }
-#Layer_1{
+
+#Layer_1 {
   width: 150px;
   height: 120px;
 }
-.logo a{
+
+.logo a {
   text-decoration: none;
   color: darkgreen;
   margin-left: 4%;
   font-size: 93px;
 }
-.menu Button{
+
+.menu Button {
   width: 90px;
   height: 10vh;
   font-size: x-large;
 }
-.menuIcons{
+
+.menuIcons {
   margin: 1% 3% 0 0;
   width: 50%;
   height: 28%;
@@ -40,16 +46,17 @@
   gap: 40px;
   flex-wrap: nowrap;
 }
+
 /*advirement*/
-.advertisement{
+.advertisement {
   border: solid darkgreen;
-  margin-top: 1%;
   height: 10vh;
   display: flex;
   justify-content: center;
 }
+
 /*SearchBar*/
-.search_bar{
+.search_bar {
   margin-top: 1%;
   width: 100%;
   height: 10%;
@@ -58,17 +65,19 @@
   flex-wrap: nowrap;
   justify-content: center;
 }
-.search_bar input{
+
+.search_bar input {
   width: 68rem;
-  height: 5vh;
   border-radius: 5%;
   font-size: x-large;
 }
-.search_bar Button{
+
+.search_bar Button {
   height: 6vh;
 }
+
 /*footer*/
-.footer{
+.footer {
   margin-top: 1%;
   width: 100%;
   clear: both;
@@ -76,28 +85,24 @@
   bottom: 0;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
+  line-height: 25px;
 }
-.footer p{
-  font-size: large;
-}
-.newsletter_btn{
-  width: fit-content;
-  height: fit-content;
-  font-weight: bold;
-}
+
 /*home*/
-.welcome{
+.welcome {
   display: flex;
   flex-direction: row;
   height: auto;
 }
- h2{
+
+h2 {
   font-family: „Comic Sans MS”, cursive, sans-serif;
   font-size: 35px;
   margin-left: 40%;
 }
-.uniwersal_window{
+
+.uniwersal_window {
   margin-top: 1%;
   display: flex;
   flex-direction: row;
@@ -105,193 +110,204 @@
 }
 
 /*userprofile*/
-.user_data{
+.user_data {
   margin-top: 3%;
   display: flex;
   flex-direction: row;
 }
-.user_data img{
+
+.user_data img {
   margin: 0 8% 0 8%;
   width: 170px;
   height: 190px;
   border: solid black;
 }
-.data{
+
+.data {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   width: 70%;
 }
-.data p{
+
+.data p {
   margin: 10% 0 0 0;
   border: solid black;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: x-large;
 }
-.data_change{
+
+.data_change {
   margin-top: 2%;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   background-color: #81fd81a2;
 }
+.css-l74ivx-MuiAvatar-root {
+  width: fit-content;
+}
+
 /*user plants*/
-.my_jungle{
+.my_jungle {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
 }
-.title_page{
+
+.title_page {
   margin-top: 1%;
   text-align: center;
-  font-family:'Courier New', Courier, monospace;
+  font-family: 'Courier New', Courier, monospace;
   font-size: xx-large;
   font-weight: bold;
-  color: green;
 }
-.search_myplant{
-  margin-top: 1%;
-  width: 100vw;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-}
-.search_myplant input{
-  width: 90%;
-}
-.user_plants{
+
+.user_plants {
   margin-top: 2%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
-.plants{
+
+.plants {
   width: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
-.plant, .next_plant{
-  width: fit-content;
-  margin-left: 2%;
-  border: solid black;
+
+.plant {
+  width: 335px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: space-around;
+  border: solid #383838;
 }
-.plants img{
-  width: 205px;
-  height: 135px;
-}
-.plant_data{
+
+.plant_data {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: space-evenly;
 }
-.add_plant{
-  margin-left: 2%;
-  border-radius: 50%;
-  width: 5%;
+/*Plant*/
+.plant_Id {
+  display: flex;
+  flex-direction: column;
 }
-.add_plant:hover {
-  background-color: mediumseagreen;
-  border-radius: 50%;
-}
-.add_plant:focus {
-  background-color: gray;
-  border-radius: 50%;
-}
-.plant_Id{
-display: flex;
-flex-direction: column;
-}
-.basic_data{
-  margin-top: 4%;
-  padding: 1% 1% 1% 1%;
+
+.basic_data {
+  margin-top: 2%;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
 }
-.basic_data img{
+
+.basic_data img {
   width: 20vw;
   height: 30vh;
 }
-.category_bar{
+
+.category_bar {
   width: 40%;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-around;
 }
-.category_bar Button{
+
+.category_bar Button {
   margin-left: 1%;
   width: fit-content;
 }
-.names_plant label{
+
+.names_plant label {
   display: flex;
   flex-direction: column;
   font-size: xx-large;
 }
-.latin_name{
+
+.latin_name {
   font-style: italic;
 }
-.category_window{
-  padding: 2% 2% 2% 2%;
+
+.category_window {
+  margin: 1% 1% 1% 1%;
+}
+
+/*Note*/
+.note{
+  width: 100%;
+  height: 180px;
+  background-color:navajowhite;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.note input{
+  margin: 3% 0 3% 0;
   font-size: x-large;
+  background-color:navajowhite;
+  border: none;
 }
 
 /*marketplace*/
-.shop{
+.shop {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
 }
-.search_ad{
+
+.search_ad {
   margin-top: 1%;
   display: flex;
   flex-direction: row;
 }
-.search_ad input{
+
+.search_ad input {
   width: 80%;
 }
-.search_ad Button{
+
+.search_ad Button {
   width: 350px;
   padding: 16px;
   font-size: 16px;
 }
+
 .dropdown {
   position: relative;
   display: inline-block;
 }
-.dropdown ul{
+
+.dropdown ul {
   margin: 0;
 }
+
 .dropdown-content {
   display: none;
   position: absolute;
   background-color: #f9f9f9;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   padding: 12px 16px;
   z-index: 1;
 }
-.dropdown-content li{
+
+.dropdown-content li {
   cursor: pointer;
   list-style-type: none;
   box-shadow: 5px 5px 10px;
 }
+
 .dropdown:hover .dropdown-content {
   display: block;
 }
-/*.shop label{
-  margin-left: 40%;
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: x-large;
-  color: darkgreen;
-  font-weight: bold;
-}*/
-.announcements{
+
+.announcements {
   margin-top: 1%;
   height: 40vh;
   display: flex;
@@ -299,142 +315,160 @@ flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-between;
 }
-.announcement{
+
+.announcement {
   width: 20%;
   display: flex;
   flex-direction: column;
   background-color: gray;
 }
-.announcement img{
+
+.announcement img {
   width: 30%;
 }
-.desc_announcement{
+
+.desc_announcement {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
 }
+
 .tab {
   overflow: hidden;
   border: 1px solid #ccc;
   background-color: #f1f1f1;
 }
+
 /*plantforum*/
-.plant_forum{
+.plant_forum {
   margin-top: 1%;
   display: flex;
 }
-.plant_forum img{
+
+.plant_forum img {
   width: 90px;
   height: 100px;
 }
-.nav_forum{
+
+.nav_forum {
   margin: 0% 0% 0% 1%;
   width: 16vw;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
 }
-.nav_forum Button{
+
+.nav_forum Button {
   margin-bottom: 5%;
   width: 180px;
   height: 70px;
 }
-.search_posts{
+
+.search_posts {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
 }
-.display_category{
+
+.display_category {
   width: 83vw;
   height: 55vh;
   border: solid black;
   flex-direction: column;
 }
-.post{
+
+.post {
   display: flex;
   flex-direction: row;
   background-color: rgb(199, 195, 195);
 }
-.post_content{
+
+.post_content {
   text-align: center;
   font-size: x-large;
 }
 
 
 /*plantclass*/
-.search{
+.search {
   margin: 1% 0% 3% 1%;
   display: flex;
 }
-.catalog{
+
+.catalog {
   margin: 1% 0% 1% 1%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
-.plantt{
+
+.plantt {
   margin: 1% 2% 0 0;
   width: 20%;
   height: 100px;
   border: solid green;
 }
-.plants_category img{
+
+.plants_category img {
   height: 400px;
 }
-.category_plant{
+
+.category_plant {
   margin-top: 1%;
   display: flex;
   flex-direction: row;
 }
-.selected_plantclass img{
-height: 500px;
+
+.selected_plantclass img {
+  height: 500px;
 }
-.category_plant p{
+
+.category_plant p {
   font-family: „Comic Sans MS”, cursive, sans-serif;
   font-size: larger;
 }
 
 /*registration*/
-.start{
+.start {
   display: flex;
   flex-direction: column;
 }
-.menu_start{
+
+.menu_start {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   border: solid darkgreen;
 }
-.contact{
+
+.contact {
   width: 50%;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
 }
-.contact a{
+
+.contact a {
   margin-top: 3%;
   font-size: xx-large;
 }
-.enter_data{
+
+.enter_data {
   margin-top: 2%;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
 }
-.media_registration{
+
+.media_registration {
   margin: 2% 0 2% 0;
   display: flex;
   border: solid darkgreen;
   justify-content: space-around;
 }
-Button{
+
+Button {
   width: 218px;
   height: 88px;
   background-color: darkgreen;
 }
-
-
-
-
-
-

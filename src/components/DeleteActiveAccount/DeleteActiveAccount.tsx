@@ -8,7 +8,8 @@ import DialogActions from '@mui/material/DialogActions';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import CloseIcon from '@mui/icons-material/Close';
-import  Grid  from '@mui/material/Grid';
+import Tab from '@mui/material/Tab';
+import Grid from '@mui/material/Grid';
 
 const ContainerDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialogContent-root': {
@@ -50,7 +51,7 @@ function ContainerDialogTitle(props: DialogTitleProps) {
   );
 }
 
-export default function CustomizedDialogs() {
+export default function DeleteActiveAccount() {
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -62,12 +63,9 @@ export default function CustomizedDialogs() {
 
   return (
     <div>
-      <Button variant="outlined" onClick={handleClickOpen}>
-        Delete Account
-      </Button>
+      <Tab onClick={handleClickOpen} label="Delete Account" />
       <ContainerDialog
         onClose={handleClose}
-        aria-labelledby="customized-dialog-title"
         open={open}
       >
         <ContainerDialogTitle id="customized-dialog-title" close={handleClose}>
@@ -75,10 +73,10 @@ export default function CustomizedDialogs() {
         </ContainerDialogTitle>
         <DialogContent dividers>
           <Typography gutterBottom>
-          Are you sure you want to delete your account?
+            Are you sure you want to delete your account?
           </Typography>
         </DialogContent>
-        <DialogActions>
+        <DialogActions >
           <Button autoFocus onClick={handleClose}>
             Yes
           </Button>
@@ -90,3 +88,4 @@ export default function CustomizedDialogs() {
     </div>
   );
 }
+

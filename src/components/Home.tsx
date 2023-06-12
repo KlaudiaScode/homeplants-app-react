@@ -1,4 +1,4 @@
-import Nav from "./Nav";
+import Nav from "./Nav/Nav";
 import Footer from "./Footer";
 import Advertisement from "./Advertisement";
 import CarePlant from "./Plant/components/CarePlant";

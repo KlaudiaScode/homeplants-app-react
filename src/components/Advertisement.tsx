@@ -1,10 +1,11 @@
+import { Typography, Link } from "@mui/material";
 import React from "react";
 
 
-export default function Footer(){
+export default function Advertisement(){
     return (
         <div className="advertisement">
-            <a href='#advertisement'><p>Miejsce na Twoją reklamę</p></a>
+            <Link sx={{mt: 5, color: 'blue'}} href='#advertisement'><Typography>Miejsce na Twoją reklamę</Typography></Link>
           </div>
     )
 }
