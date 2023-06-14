@@ -1,53 +1,49 @@
 import React from 'react';
-import Nav from '../Nav';
-import plant from '../../img/plant.jpg';
-import palm from '../../img/palm.jpg';
+import Nav from '../Nav/Nav';
+import Advertisement from '../Advertisement';
+import Footer from '../Footer';
+import SearchBar from '../SearchBar';
+import { Avatar, Box, Container, Link, Typography } from '@mui/material';
+import { fetchUserPlants } from '../../helpers/fetchUserPlants';
+import NewPlant from './components/NewPlant';
 
-export interface UserPlantsProps{
-    setMenuItem: (arg:string)=>void
+export interface UserPlantsProps {
+    setMenuItem: (arg: string) => void
 }
 
-export default function UserPlants({setMenuItem}: UserPlantsProps){
+export default function UserPlants() {
+    const dataPlants = fetchUserPlants();
     return (
         <div className="App">
-            <div className="houseplants">
-                <Nav setMenuItem={setMenuItem} />
-                <div className="advertisement">
-                    <a href='#advertisement'><p>Miejsce na Twoją reklamę</p></a>
+            <Nav />
+            <Advertisement />
+            <div className='my_jungle'>
+                <div className='title_page'>
+                    <span>My Jungle</span>
                 </div>
-                <div className='my_jungle'>
-                    <div className='title_page'>
-                        <span>My Jungle</span>
-                    </div>
-                <div className='search_myplant'>
-                    <input type='text' placeholder='Write name your plant'></input>
-                    <button>Search</button>
-                </div>
+                <SearchBar />
                 <div className='user_plants'>
                     <div className='plants'>
-                        <div className='plant'>
-                            <img src={plant} alt='my_plant'/>
-                            <div className='plant_data'>
-                                <span>📄Chlorophytum laxum</span>
-                                <span>📍Kitchen</span>
-                                <span>💩mar.-apr.(every 2 weeks)</span>
-                                <span>💧every 2-3days</span>
-                            </div>
-                        </div>
-                        <div className='next_plant'>
-                            <img src={palm} alt='my_plant'/>
-                            <div className='plant_data'>
-                                <span>📄Chrysalidocarpus syn. Areca</span>
-                                <span>📍Livingroom</span>
-                                <span>💩mar.-aug.(every month)</span>
-                                <span>💧twice weekly</span>
-                            </div>
-                        </div>
-                        <button className='add_plant'>➕</button>
+                        {dataPlants.map((plant: any) => (
+                            <Link key={plant.id} href={`/userplants/${plant.id}/description`} color='inherit'>
+                                <Box sx={{ width: '336px', height: '184px', border: 'solid', borderColor: 'black' }}>
+                                    <Avatar alt="my plant" src={plant.imgFile} sx={{ width: '150px', height: '150px', float: 'left' }} />
+                                    <Container sx={{ width: '180px', height: '184px', display: 'flex', flexDirection: 'column', float: 'right' }}>
+                                        <Typography>📄{plant.latinName}</Typography>
+                                        <Typography>📍{plant.localization}</Typography>
+                                        <Typography>💩{plant.fertilization}</Typography>
+                                        <Typography>💧{plant.watering}</Typography>
+                                    </Container>
+                                </Box>
+                            </Link>
+                        ))}
+                        <NewPlant />
                     </div>
                 </div>
-                </div>
             </div>
+            <Footer />
         </div>
     )
 }
+//Przerzucić tablicę dataUserPlants do localStorage.
+//Wyświetlić dane W userPlants i Plants z localStorage.

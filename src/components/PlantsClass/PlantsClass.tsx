@@ -1,58 +1,83 @@
 import React from 'react';
-import Nav from '../Nav';
+import Nav from '../Nav/Nav';
+import { Link } from "react-router-dom";
+import Advertisement from '../Advertisement';
+import Footer from '../Footer';
+import SearchBar from '../SearchBar';
+import { Box, Button } from '@mui/material';
 
 export interface UserPlantsProps{
     setMenuItem: (arg:string)=>void
 }
 
-export default function UserPlants({setMenuItem}: UserPlantsProps){
+export default function UserPlants(){
     return (
         <div className="App">
-            <div className="houseplants">
-                <Nav setMenuItem={setMenuItem} />
-                    <div className="advertisement">
-                        <a href='#advertisement'><p>Miejsce na Twoją reklamę</p></a>
-                    </div>
-                    <div className='search'>
-                        <input type='text' placeholder='Search by name......'/>
-                        <button>Search</button>
-                    </div>
-                    <div className='catalog'>
-                        <button className='plantt'>
-                            <label>Nazwa rośliny na tle jej zdjęcia</label>
-                        </button>
-                        <button className='plantt'>
-                            <label>Nazwa rośliny na tle jej zdjęcia</label>
-                        </button>
-                        <button className='plantt'>
-                            <label>Nazwa rośliny na tle jej zdjęcia</label>
-                        </button>
-                        <button className='plantt'>
-                            <label>Nazwa rośliny na tle jej zdjęcia</label>
-                        </button>
-                        <button className='plantt'>
-                            <label>Nazwa rośliny na tle jej zdjęcia</label>
-                        </button>
-                        <button className='plantt'>
-                            <label>Nazwa rośliny na tle jej zdjęcia</label>
-                        </button>
-                        <button className='plantt'>
-                            <label>Nazwa rośliny na tle jej zdjęcia</label>
-                        </button>
-                        <button className='plantt'>
-                            <label>Nazwa rośliny na tle jej zdjęcia</label>
-                        </button>
-                        <button className='plantt'>
-                            <label>Nazwa rośliny na tle jej zdjęcia</label>
-                        </button>
-                        <button className='plantt'>
-                            <label>Nazwa rośliny na tle jej zdjęcia</label>
-                        </button>
-                        <button className='plantt'>
-                            <label>Nazwa rośliny na tle jej zdjęcia</label>
-                        </button>
-                    </div>
-            </div>
+            <Nav/>
+            <Advertisement />
+            <SearchBar />
+            <Box className='categories' sx={{m:1}}>
+                <Link to="/plantsclass/category">
+                    <Button variant='contained' className='plantt'>
+                    <label>Kwitnące latem</label></Button>
+                </Link>
+                <Link to="/plantsclass/category">
+                <Button variant='contained' className='plantt'>
+                    <label>Kwitnące wiosną</label>
+                </Button>
+                </Link>
+                <Link to="/plantsclass/category">
+                <Button variant='contained' className='plantt'>
+                    <label>Kwitnące jesienią</label>
+                </Button>
+                </Link>
+                <Link to="/plantsclass/category">
+                <Button variant='contained' className='plantt'>
+                    <label>Kwitnące zimą</label>
+                </Button>
+                </Link>
+                <Link to="/plantsclass/category">
+                <Button variant='contained' className='plantt'>
+                    <label>Ozdobne owoce</label>
+                </Button>
+                </Link>
+                <Link to="/plantsclass/category">
+                <Button variant='contained' className='plantt'>
+                    <label>Ozdobne kwiaty</label>
+                </Button>
+                </Link>
+                <Link to="/plantsclass/category">
+                <Button variant='contained' className='plantt'>
+                    <label>Ozdobne liście</label>
+                </Button>
+                </Link>
+                <Link to="/plantsclass/category">
+                <Button variant='contained' className='plantt'>
+                    <label>Pachnące</label>
+                </Button>
+                </Link>
+                <Link to="/plantsclass/category">
+                <Button variant='contained' className='plantt'>
+                    <label>Stanowisko jasne</label>
+                </Button>
+                </Link>
+                <Link to="/plantsclass/category">
+                <Button variant='contained' className='plantt'>
+                    <label>Stanowisko zacienione</label>
+                </Button>
+                </Link>
+                <Link to="/plantsclass/category">
+                <Button variant='contained' className='plantt'>
+                    <label>Bezpieczne dla zwierząt</label>
+                </Button>
+                </Link>
+                <Link to="/plantsclass/category">
+                <Button variant='contained' className='plantt'>
+                    <label>Zioła</label>
+                </Button>
+                </Link>
+            </Box>
+            <Footer />
         </div>
     )
 }

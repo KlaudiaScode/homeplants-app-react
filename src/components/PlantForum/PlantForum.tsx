@@ -1,48 +1,32 @@
 import React from 'react';
-import Nav from '../Nav';
+import Nav from '../Nav/Nav';
+import { Link, Outlet } from 'react-router-dom';
+import Footer from '../Footer';
+import { Button } from '@mui/material';
+import Advertisement from '../Advertisement';
 
 export interface ForumProps{
     setMenuItem: (arg:string)=>void
 }
 
-export default function PlantForum({setMenuItem}: ForumProps){
+export default function PlantForum(){
     return (
         <div className="App">
-            <div className="houseplants">
-                <Nav setMenuItem={setMenuItem} />
-                <div className='plant_forum'>
-                    <div className='menu_forum'>
-                        <button>Posts</button>
-                        <button>Members</button>
-                        <button>Questions</button>
-                        <button>Multimedia</button>
-                        <button>Messages</button>
-                        <div className='search_posts'>
-                            <input type='text' placeholder='search in posts'></input>
-                            <button>🔎</button>
-                        </div>
-                        
-                    </div>
-                    <div className='display_category'>
-                        <div>
-                            <img/>
-                            <p>describe</p>
-                        </div>
-                        <div>
-                            <img/>
-                            <p>describe</p>
-                        </div>
-                        <div>
-                            <img/>
-                            <p>describe</p>
-                        </div>
-                        <div>
-                            <img/>
-                            <p>describe</p>
-                        </div>
-                    </div>
+            <Nav/>
+            <Advertisement />
+            <div className='plant_forum'>
+                <div className='nav_forum'>
+                    <Link to='posts'><Button variant='contained'>Posts</Button></Link>
+                    <Link to='members'><Button variant='contained'>Members</Button></Link>
+                    <Link to='questions'><Button variant='contained'>Questions</Button></Link>
+                    <Link to='multimedia'><Button variant='contained'>Multimedia</Button></Link>
+                    <Link to='messages'><Button variant='contained'>Messages</Button></Link>
+                </div>
+                <div className='display_category'>
+                    <Outlet />
                 </div>
             </div>
+            <Footer />
         </div>
     )
 }
