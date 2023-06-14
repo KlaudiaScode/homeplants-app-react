@@ -3,9 +3,9 @@ import Nav from '../Nav/Nav';
 import Advertisement from '../Advertisement';
 import Footer from '../Footer';
 import SearchBar from '../SearchBar';
-import { Avatar, Box, Button, Container, Link, Typography } from '@mui/material';
-import AddIcon from '@mui/icons-material/Add';
+import { Avatar, Box, Container, Link, Typography } from '@mui/material';
 import { fetchUserPlants } from '../../helpers/fetchUserPlants';
+import NewPlant from './components/NewPlant';
 
 export interface UserPlantsProps {
     setMenuItem: (arg: string) => void
@@ -37,7 +37,7 @@ export default function UserPlants() {
                                 </Box>
                             </Link>
                         ))}
-                        <Button sx={{ width: 100, backgroundColor: '#B0B0B0', m: 2, textAlign: 'center' }}><AddIcon /></Button>
+                        <NewPlant />
                     </div>
                 </div>
             </div>
