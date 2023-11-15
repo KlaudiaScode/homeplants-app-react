@@ -1,10 +1,12 @@
 import React from 'react';
 import Nav from '../Nav/Nav';
 import firstplant from '../../img/skrzydlokwiat.jpg';
+import { useNavigate } from 'react-router-dom';
 
 
 
 export default function SelectedPlantClass(){
+    const navigate = useNavigate()
     return (
         <div className="App">
             <div className="houseplants">
@@ -14,6 +16,7 @@ export default function SelectedPlantClass(){
                     </div>
                     <div className='selected_plantclass'>
                         <div className='category_plant'>
+                        <button onClick={()=>navigate(-1)}>Back</button>
                             <img src={firstplant}></img>
                             <div className='dataplant'>
                                 <label className='polishName'>SKRZYDŁOKWIAT / SKRZYDŁOLIST</label>

@@ -4,9 +4,9 @@ import ImageListItem from '@mui/material/ImageListItem';
 
 export default function PlantGallery() {
   return (
-    <ImageList sx={{ width: 1800, height: 330, gap: 100 }} cols={3} rowHeight={330}>
+    <ImageList sx={{ width: 1500, height: 330, gap: 100 }} cols={3} rowHeight={330}>
       {itemData.map((item) => (
-        <ImageListItem key={item.img}>
+        <ImageListItem sx={{ width: 400 }} key={item.img}>
           <img
             src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
             srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
@@ -16,7 +16,7 @@ export default function PlantGallery() {
         </ImageListItem>
       ))}
     </ImageList>
-  );
+  ); 
 }
 
 const itemData = [
@@ -37,10 +37,6 @@ const itemData = [
   },
   {
     img: 'https://images.unsplash.com/photo-1537039557108-4a42c334fd5e',
-    title: '',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1558642452-9d2a7deb7f62',
     title: '',
   },
   {

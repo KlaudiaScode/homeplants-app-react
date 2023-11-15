@@ -1,3 +1,4 @@
+import React from "react";
 import { Typography } from "@mui/material";
 import {dataPlants} from "../../UserPlants/components/dataUserPlants";
 import { useParams } from "react-router-dom";
