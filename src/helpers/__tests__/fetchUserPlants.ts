@@ -1,6 +1,4 @@
-import { error } from "console";
 import { fetchUserPlants } from "../fetchUserPlants";
-
 
 const localStorageMock = (function () {
   let store: Record<string, string> = {}
@@ -21,7 +19,7 @@ Object.defineProperty(window, 'localStorage', {
 
 describe('fetchUserPlants', () => {
   const spyLocalStorageGetItem = jest.spyOn(localStorage, 'getItem');
-  it('should return empty array', async () => {
+  it('should return empty array when there is no value assigned to the key in the localStorage', async () => {
     spyLocalStorageGetItem.mockReturnValueOnce(null);
     const result = fetchUserPlants();
     expect(result).toEqual([]);
@@ -30,14 +28,15 @@ describe('fetchUserPlants', () => {
     expect(spyLocalStorageGetItem).toHaveBeenCalledTimes(1);
   })
   
-  it('should return an array with a string', async () => {
+  it('should return parsed array saved as JSON in the localStorage', async () => {
     spyLocalStorageGetItem.mockReturnValueOnce('["cat","dog","bee"]');
     const result = fetchUserPlants();
     expect(result).toEqual(['cat', 'dog', 'bee']);
   })
 
-  it('should return error', async () => {
-    spyLocalStorageGetItem.mockReturnValueOnce(error);
+  it('should return empty array when in localStorage is saved wrong JSON', async () => {
+    const wrongJson = 'abc' ;
+    spyLocalStorageGetItem.mockReturnValueOnce(wrongJson);
     const result = fetchUserPlants();
     expect(result).toEqual([]);
   })

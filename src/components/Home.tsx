@@ -1,12 +1,9 @@
+import React from "react";
 import Nav from "./Nav/Nav";
 import Footer from "./Footer";
 import Advertisement from "./Advertisement";
 import CarePlant from "./Plant/components/CarePlant";
 import SearchBar from "./SearchBar";
-
-export interface HomeProps{
-    setMenuItem: (arg:string)=>void
-}
 
 export default function Home(){
   return (
